@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Projects</title>
+    <!-- AOS Animation CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <style>
+
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -16,7 +20,7 @@
         }
 
         header {
-            background-color: #1E3A8A;
+            background-color: #A88ED7;
             color: #fff;
             text-align: center;
             padding: 20px 0;
@@ -43,7 +47,7 @@
         }
 
         h2 {
-            color: #1E3A8A;
+            color: #4A90E2;
             font-size: 2em;
             margin-bottom: 10px;
         }
@@ -69,11 +73,11 @@
 
             /* Style the text inside list items */
             .project-list ul li strong {
-                color: #1E3A8A;
+                color: #8569BA;
             }
 
         .highlight {
-            color: #D91A3D;
+            color: #4A90E2;
             font-weight: bold;
         }
 
@@ -81,14 +85,14 @@
     </style>
 </head>
 <body>
-    <header>
+    <header data-aos="fade-down">
         <h1>Portfolio Projects</h1>
         
     </header>
 
 
 
-    <section>
+    <section data-aos="fade-in">
         <h1>Temperature Prediction with Machine Learning</h1>
         <h2>Project Overview:</h2>
         <p>This project, which won 3rd place, explored existing machine learning algorithms to choose the best one for predicting temperature from time-series data for up to 8 hours. The chosen model was integrated into a Python-based application, trained on data collected from IoT devices (data loggers installed in industrial refrigerators). The application was designed to create alerts when predicted temperatures fall outside of the expected bounds set by the client.</p>
@@ -120,8 +124,8 @@
 
 
 
-
-    <section>
+     
+    <section data-aos="fade-up">
         <h1>Fan Club Web App using ASP.NET and Entity Framework</h1>
         <h2>Project Overview:</h2>
         <a href="https://hadiyahlab5.azurewebsites.net/">View the Live Project</a>
@@ -159,7 +163,7 @@
        
     </section>
 
-    <section>
+    <section data-aos="fade-up">
         <h1>Compilers Project: IronClad Programming Language</h1>
         <h2>Project Overview:</h2>
         <p>Designed and developed <strong>IronClad</strong>, a custom programming language inspired by Rust, utilizing C and Visual Studio Code. Engineered essential components, including a reader, scanner, and parser, to establish a robust foundation for language processing and compilation.</p>
@@ -186,7 +190,7 @@
         </ul>
     </section>
 
-    <section>
+    <section data-aos="fade-up">
         <h1>Real-Time Building Entry Control System</h1>
         <h2>Project Overview:</h2>
         <p>Developed a <strong>Real-Time Building Entry Control System</strong> to simulate and manage access within a controlled space. This system integrates various components, including card scanners, door controllers, weight sensors, and a guard-operated mechanism, to manage entry and exit through the building. The project demonstrates proficiency in real-time programming using <strong>state machine design</strong> and inter-process communication within a QNX environment.</p>
@@ -218,7 +222,7 @@
     </section>
 
 
-    <section>
+    <section data-aos="fade-up">
         <h1>Snake Game Written in JavaFX</h1>
         <h2>Project Overview:</h2>
         <p>Created a <strong>Snake Game</strong> using JavaFX, featuring smooth animations, real-time controls, and customizable settings for gameplay. The project demonstrates proficiency in JavaFX application development, focusing on graphical user interface design and game mechanics.</p>
@@ -245,12 +249,45 @@
     </section>
 
 
+    <section data-aos="fade-up">
+        <h1>Data Analysis and Visualization Project</h1>
+        <h2>Project Overview:</h2>
+        <p>This project focused on processing and analyzing data from industrial devices to gain meaningful insights. By integrating advanced visualization techniques, the project highlights the ability to analyze trends, predict outcomes, and represent data effectively in a user-friendly manner.</p>
+
+        <h2>Key Features:</h2>
+        <ul class="project-list">
+            <ul>
+                <li><strong>Data Cleaning and Preparation:</strong> Handled large datasets, ensured accuracy, and performed preprocessing to remove inconsistencies.</li>
+                <li><strong>Visualization Techniques:</strong> Utilized various plotting tools and libraries to present data insights in visually compelling formats.</li>
+                <li><strong>Predictive Analysis:</strong> Applied machine learning models to forecast future trends and device behaviors based on historical data.</li>
+                <li><strong>Interactive Reports:</strong> Created dashboards and reports for easy interpretation of complex datasets.</li>
+            </ul>
+        </ul>
+
+        <h2>Project Highlights:</h2>
+        <ul class="project-list">
+            <ul>
+                <li>Demonstrated proficiency in data analysis and visualization using Python libraries like Matplotlib and Seaborn.</li>
+                <li>Integrated predictive capabilities to provide actionable insights for industrial processes.</li>
+                <li>Developed a user-centric interface for stakeholders to interact with data and derive conclusions effortlessly.</li>
+                <li>Streamlined data workflows for efficiency and scalability.</li>
+            </ul>
+        </ul>
+    </section>
 
 
 
 
-    <footer>
-        <p>&copy; 2024 Portfolio | All Rights Reserved</p>
+    <footer data-aos="fade-in">
+        <p>&copy; 2025 Portfolio | All Rights Reserved</p>
     </footer>
+
+
+    <!-- AOS Animation JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script>
+        AOS.init(); // Initialize AOS animations
+    </script>
+
 </body>
 </html>
