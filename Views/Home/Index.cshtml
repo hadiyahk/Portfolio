@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-<div id="projectCarousel" class="carousel slide" data-bs-ride="carousel">
+<div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" style="padding-bottom: 100px;">
     <div class="carousel-inner">
 
         <div class="carousel-item active">
@@ -63,12 +63,66 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
     </button>
+
+    <div class="text-center my-4">
+        <a asp-controller="Projects" asp-action="Index" class="btn btn-custom">See All Projects</a>
+    </div>
+
 </div>
 
 
-<div class="text-center my-4">
-    <a asp-controller="Projects" asp-action="Index" class="btn btn-custom">See All Projects</a>
-</div>
+
+
+<section class=" full-width text-center" style="background-color: black; color: white; padding: 50px;">
+    <h2>About Me</h2>
+    <p style="padding: 30px;">I am a passionate developer with experience in building robust web applications and a love for solving complex problems.</p>
+    <a asp-controller="AboutMe" asp-action="Index" class="btn-custom">Learn More About Me</a>
+</section>
+
+
+<section class=" full-width" style="background-color: white; ">
+    <h2 class="text-center">Here's What I Can Help You With</h2>
+    <div class="row text-center mt-4" style="padding-left: 300px; padding-right: 300px;">
+        <div class="col-md-4">
+            <div class=" skill-card">
+                <h4>Web Development</h4>
+                <p>I build responsive and scalable web applications using modern frameworks and best practices.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class=" skill-card">
+                <h4>Agile Methodologies</h4>
+                <p>Experienced in Agile workflows, sprint planning, and delivering projects efficiently in a team environment.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class=" skill-card">
+                <h4>Machine Learning</h4>
+                <p>I can design and train machine learning models to solve real-world problems using TensorFlow and Keras.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class=" skill-card">
+                <h4>Database Management</h4>
+                <p>Skilled in designing, optimizing, and managing relational databases with tools like MariaDB and SQL Server.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class=" skill-card">
+                <h4>Cloud Computing</h4>
+                <p>Proficient in deploying, managing, and scaling applications on cloud platforms like AWS and Azure.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class=" skill-card">
+                <h4>UI/UX Design</h4>
+                <p>Expert in creating intuitive and visually appealing interfaces that enhance user experience.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
 
 <style>
     p strong {
@@ -86,6 +140,37 @@
             width: 4px;
             background-color: #FFD700;
         }
+
+    .full-width {
+        width: 100vw;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding: 20px 0;
+    }
+
+
+
+    .skill-card {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .skill-card h4 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+            color: #FF3855
+        }
+
+        .skill-card p {
+            font-size: 0.95rem;
+        }
+
 </style>
 
 <script>
@@ -94,7 +179,6 @@
         document.querySelectorAll('.carousel-item .animate').forEach(el => {
             el.classList.remove('fade-up', 'fade-right', 'fade-in');
         });
-
 
         const activeSlide = event.relatedTarget;
         activeSlide.querySelectorAll('.animate').forEach((el) => {
@@ -110,14 +194,3 @@
         });
     });
 </script>
-
-
-
-
-
-
-
-
-
-
-
