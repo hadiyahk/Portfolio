@@ -1,142 +1,130 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Skills</title>
-    <link rel="stylesheet" href="StyleSheet1.css" />
-    <style>
-        .slide-container {
-            display: none;
+﻿
+<style>
+
+
+    .skills-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 50px;
+        justify-content: center;
+    }
+
+    .skill {
+        text-align: center;
+        width: 150px;
+        height: 150px;
+    }
+
+    p {
+        color: white;
+    }
+
+
+    .circle-svg {
+        position: relative;
+        width: 150px;
+        height: 150px;
+    }
+
+        .circle-svg svg {
+            transform: rotate(-90deg);
+            width: 100%;
+            height: 100%;
         }
 
-        .active-slide {
-            display: block;
+
+        .circle-svg .bg-circle {
+            fill: none;
+            stroke: #C8E1E2;
+            stroke-width: 10;
         }
 
-        .circle-button {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            background-color: #4A90E2;
-            display: inline-block;
-            text-align: center;
-            line-height: 50px;
-            cursor: pointer;
-            font-size: 18px;
-            color: white;
+
+        .circle-svg .progress-circle {
+            fill: none;
+            stroke: #FF3855;
+            stroke-width: 10;
+            stroke-linecap: round;
+            stroke-dasharray: 377;
+            stroke-dashoffset: 377;
+            transition: stroke-dashoffset 1.5s ease-out;
         }
 
-            .circle-button:hover::after {
-                content: "Click!";
-                position: absolute;
-                top: -25px;
-                font-size: 12px;
-                color: #333;
-            }
-    </style>
-</head>
-<body>
 
-    <h1 style="text-align: center; font-size: 2.5em; color: #4A90E2;">Programming Languages</h1>
+    .circle-text {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        font-size: 16px;
+        font-weight: bold;
+        color: #C8E1E2;
+    }
+</style>
 
-    <div class="skills-container slide-container active-slide" id="languages-slide">
+<div class="skills-container" id="skillsContainer">
+</div>
 
-    <div class="skills-container">
-        <div class="skill">
-            <div class="circle">Java</div>
-            <div class="progress-bar">
-                <div class="progress" style="--skill-width: 85%;"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="circle">Python</div>
-            <div class="progress-bar">
-                <div class="progress" style="--skill-width: 90%;"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="circle">C++</div>
-            <div class="progress-bar">
-                <div class="progress" style="--skill-width: 80%;"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="circle">C#</div>
-            <div class="progress-bar">
-                <div class="progress" style="--skill-width: 75%;"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="circle">HTML</div>
-            <div class="progress-bar">
-                <div class="progress" style="--skill-width: 95%;"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="circle">CSS</div>
-            <div class="progress-bar">
-                <div class="progress" style="--skill-width: 90%;"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="circle">JavaScript</div>
-            <div class="progress-bar">
-                <div class="progress" style="--skill-width: 80%;"></div>
-            </div>
-        </div>
+<script>
 
-        <div class="skill">
-            <div class="circle">R</div>
-            <div class="progress-bar">
-                <div class="progress" style="--skill-width: 75%;"></div>
-            </div>
-        </div>
+    const skills = [
+        { name: "Java", percentage: 85 },
+        { name: "Python", percentage: 90 },
+        { name: "C++", percentage: 75 },
+        { name: "C#", percentage: 80 },
+        { name: "HTML", percentage: 95 },
+        { name: "CSS", percentage: 90 },
+        { name: "JavaScript", percentage: 80 },
 
-        <div class="skill">
-            <div class="circle">HTML5</div>
-            <div class="progress-bar">
-                <div class="progress" style="--skill-width: 80%;"></div>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="circle">CSS3</div>
-            <div class="progress-bar">
-                <div class="progress" style="--skill-width: 85%;"></div>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="circle">PHP</div>
-            <div class="progress-bar">
-                <div class="progress" style="--skill-width: 70%;"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="circle">Rust</div>
-            <div class="progress-bar">
-                <div class="progress" style="--skill-width: 75%;"></div>
-            </div>
-        </div>
-        <div class="skill">
-            <div class="circle">Bash-Script</div>
-            <div class="progress-bar">
-                <div class="progress" style="--skill-width: 70%;"></div>
-            </div>
-        </div>
-
-    </div>
-
-    <h1> </h1>
-    <h1> </h1>
-
-    <h1 style="text-align: center; font-size: 2.5em; color: #4A90E2;">Programming Languages</h1>
+    ];
 
 
+    const skillsContainer = document.getElementById("skillsContainer");
 
-    <footer>
-        <p>&copy; 2025 Portfolio | All Rights Reserved</p>
-    </footer>
-</body>
-</html>
+
+    skills.forEach(skill => {
+
+        const skillDiv = document.createElement("div");
+        skillDiv.className = "skill";
+        skillDiv.setAttribute("data-percentage", skill.percentage);
+
+
+        skillDiv.innerHTML = `
+                            <div class="circle-svg">
+                                <svg viewBox="0 0 140 140">
+                                    <circle class="bg-circle" cx="70" cy="70" r="60"></circle>
+                                    <circle class="progress-circle" cx="70" cy="70" r="60"></circle>
+                                </svg>
+                                <div class="circle-text">${skill.percentage}%</div>
+                            </div>
+                            <p>${skill.name}</p>
+                        `;
+
+
+        skillsContainer.appendChild(skillDiv);
+    });
+
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const skills = document.querySelectorAll('.skill');
+
+        skills.forEach(skill => {
+            const percentage = skill.getAttribute('data-percentage');
+            const progressCircle = skill.querySelector('.progress-circle');
+            const radius = progressCircle.r.baseVal.value;
+            const circumference = 2 * Math.PI * radius;
+
+
+            progressCircle.style.strokeDasharray = circumference;
+
+
+            const offset = circumference - (percentage / 100) * circumference;
+
+
+            setTimeout(() => {
+                progressCircle.style.strokeDashoffset = offset;
+            }, 100);
+        });
+    });
+</script>
+

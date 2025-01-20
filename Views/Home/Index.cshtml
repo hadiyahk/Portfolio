@@ -1,65 +1,305 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Me</title>
-    <!-- AOS CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css"
-          rel="stylesheet" />
-    <style>
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            font-size: 0.9em;
-            color: #777;
-        }
-    </style>
-</head>
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
 
-<body>
-    <div style="display: flex; align-items: center; gap: 20px;" data-aos="fade-right">
-        <div>
-            <img src="my_self.JPG" style="height: 350px; width: 250px; border-radius: 50%;
-           border: rgba(0, 17, 82 ,0.1) 10px solid;
-           box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.2);" />
+<div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" style="padding-bottom: 100px;">
+    <div class="carousel-inner">
+
+        <div class="carousel-item active">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="animate">Temprature Prediction with Machine Learning</h3>
+                    <p class="animate"><strong>Technology Used:</strong> Python, Machine learning algorithms, MatPlotLib</p>
+                    <p class="animate">This 3rd-place project used machine learning to predict temperatures from IoT data in industrial refrigerators and alert when values fall outside expected bounds.</p>
+                </div>
+                <div class="col-md-6">
+                    <video class="animate" autoplay loop muted>
+                        <source src="project_2.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+              
+                </div>
+            </div>
         </div>
-        <div>
-            <div style="font-family: Arial, sans-serif; line-height: 1.6; max-width: 800px; margin: auto; padding: 20px;">
-                <h1 style="text-align: center; font-size: 2.5em; color: #4A90E2; font-family: 'Times New Roman', Times, serif;" data-aos="fade-up">Who Am I?</h1>
-                <p style="font-size: 1.1em; color: #333;" data-aos="fade-left">
-                   Hi! my name is Hadiyah Khan and I am a passionate and results-driven software developer with a strong foundation in <strong>web development</strong>, <strong>data analysis</strong>, and <strong>software engineering</strong>. </partial>
-                   <p>Over the years, I’ve honed my skills by tackling complex problems, leveraging cutting-edge technologies, and delivering impactful solutions. My journey in technology has been fueled by an innate curiosity, a desire to understand how things work, and an unwavering commitment to continuous learning.
-                </p>
-                <p style="font-size: 1.1em; color: #333;" data-aos="fade-left">
-                    What excites me most is the process of transforming ideas into functional, efficient, and user-friendly systems. For me, every line of code is not just a task—it’s an opportunity to innovate, optimize, and contribute to a larger goal. Whether I'm building a responsive website, analyzing data trends, or developing a scalable application, I strive to create solutions that are both powerful and meaningful. I thrive on the challenge of solving intricate problems and discovering new ways to push the boundaries of what’s possible.
-                </p>
+
+        <div class="carousel-item">
+            <div class="row">
+                 <div class="col-md-6">
+                <h3 class="animate">Fan Club Web App using ASP.NET and Entity Framework</h3>
+                <p class="animate"><strong>Technology Used:</strong> ASP.NET Core, C# programming Language</p>
+                <p class="animate">Created a feature-rich Fan Club Web App as a creative assignment, showcasing mastery of foundational techniques from course labs</p>
+                </div>
+                <div class="col-md-6">
+                <video class="animate" autoplay loop muted>
+                <source src="project_1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+                </video>
+                </div>
+            </div>
+        </div>
+
+        <div class="carousel-item">
+            <div class="row">
+                <div class="col-md-6">
+                    <h3 class="animate">Project 3</h3>
+                    <p class="animate"><strong>Technology Used:</strong> Python, TensorFlow</p>
+                    <p class="animate">descrition blablablbbjb</p>
+                </div>
+                <div class="col-md-6">
+                    <video class="animate" autoplay loop muted>
+                        <source src="project3_video.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
             </div>
         </div>
     </div>
 
-    <h1 style="text-align: center; font-size: 2.5em; color: #4A90E2; font-family: 'Times New Roman', Times, serif;" data-aos="fade-down">My Work Ethic</h1>
-    <p style="font-size: 1.1em; color: #333;" data-aos="fade-right">
-        I bring a strong work ethic, determination, and adaptability to everything I do. I thrive in fast-paced environments where change is constant, and expectations evolve rapidly. This dynamic nature fuels my growth, as I’m constantly learning, refining my skills, and adapting to new technologies and methodologies. I embrace challenges as opportunities to expand my knowledge and improve my craft.
-    </p>
-    <p style="font-size: 1.1em; color: #333;" data-aos="fade-right">
-        Beyond coding, I am deeply committed to <strong>collaboration</strong> and <strong>teamwork</strong>. I believe that the best solutions come from diverse perspectives and collective effort. I enjoy working with cross-functional teams, where I can contribute my technical expertise while also learning from others. Whether it’s collaborating on a project, mentoring a peer, or sharing insights, I am driven by the opportunity to grow alongside others and contribute to shared success.
-    </p>
-    <p style="font-size: 1.1em; color: #333;" data-aos="fade-right">
-        Ultimately, I am not just a developer—I am someone who believes in the power of technology to shape the future. I’m passionate about creating software that makes a real difference, whether by simplifying daily tasks, improving business efficiency, or enhancing user experiences. I’m always looking for the next challenge, eager to push the boundaries of what I can achieve and make a lasting impact.
-    </p>
 
-    <footer>
-        <p>&copy; 2025 Portfolio | All Rights Reserved</p>
-    </footer>
+    <button class="carousel-control-prev" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
 
-    <!-- AOS JavaScript -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        AOS.init({
-            duration: 1200, // Animation duration (in ms)
-            once: true,     // Animation happens only once
+    <div class="text-center my-4">
+        <a asp-controller="Projects" asp-action="Index" class="btn btn-custom">See All Projects</a>
+    </div>
+
+</div>
+
+
+
+
+<section class=" full-width text-center" style="background-color: black; color: white; padding: 50px;">
+    <h2>About Me</h2>
+    <p style="padding: 30px;">I am a passionate developer with experience in building robust web applications and a love for solving complex problems.</p>
+    <a asp-controller="AboutMe" asp-action="Index" class="btn-custom">Learn More About Me</a>
+</section>
+
+
+<section class=" full-width" style="background-color: white; ">
+    <h2 class="text-center">Here's What I Can Help You With</h2>
+    <div class="row text-center mt-4" style="padding-left: 300px; padding-right: 300px;">
+        <div class="col-md-4">
+            <div class=" skill-card">
+                <h4>Web Development</h4>
+                <p>I build responsive and scalable web applications using modern frameworks and best practices.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class=" skill-card">
+                <h4>Agile Methodologies</h4>
+                <p>Experienced in Agile workflows, sprint planning, and delivering projects efficiently in a team environment.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class=" skill-card">
+                <h4>Machine Learning</h4>
+                <p>I can design and train machine learning models to solve real-world problems using TensorFlow and Keras.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class=" skill-card">
+                <h4>Database Management</h4>
+                <p>Skilled in designing, optimizing, and managing relational databases with tools like MariaDB and SQL Server.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class=" skill-card">
+                <h4>Cloud Computing</h4>
+                <p>Proficient in deploying, managing, and scaling applications on cloud platforms like AWS and Azure.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class=" skill-card">
+                <h4>UI/UX Design</h4>
+                <p>Expert in creating intuitive and visually appealing interfaces that enhance user experience.</p>
+            </div>
+        </div>
+    </div>
+
+    <h2 class="text-center">Take a quick look at my skill-set!</h2>
+
+    <div class="row text-center mt-4" style="padding-left: 300px; padding-right: 300px;">
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fab fa-python fa-4x"></i> Python
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fab fa-java fa-4x"></i> Java
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fab fa-js fa-4x"></i> JavaScript
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fab fa-html5 fa-4x"></i> HTML5
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fab fa-css3-alt fa-4x"></i> CSS3
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fab fa-php fa-4x"></i> PHP
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fab fa-node-js fa-4x"></i> Node.js
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fab fa-react fa-4x"></i> React
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fas fa-database fa-4x"></i> MYSQL
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fas fa-cogs fa-4x"></i> C++
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fas fa-terminal fa-4x"></i> Shell Scripting
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fab fa-docker fa-4x"></i> Docker
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fas fa-brain fa-4x"></i> Machine Learning
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fas fa-code fa-4x"></i> C#
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fas fa-database fa-4x"></i> MariaDB
+            </div>
+        </div>
+        <div class="col-md-2">
+            <div class=" skill-card">
+                <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+                <i class="fas fa-code fa-4x"></i> R
+            </div>
+        </div>
+
+
+</section>
+
+
+
+<style>
+    p strong {
+        position: relative;
+        padding-left: 10px;
+        font-weight: bold;
+    }
+
+        p strong::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 4px;
+            background-color: #FFD700;
+        }
+
+    .full-width {
+        width: 100vw ;
+        position: relative;
+        left: 50%;
+        right: 50%;
+        margin-left: -50vw;
+        margin-right: -50vw;
+        padding: 20px 0;
+    }
+
+
+
+    .skill-card {
+        height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+        .skill-card h4 {
+            margin-bottom: 10px;
+            font-size: 1.25rem;
+            color: #FF3855
+        }
+
+        .skill-card p {
+            font-size: 0.95rem;
+        }
+
+    .line {
+        border-bottom: 5px solid black;
+        margin: 5px auto;
+        width: 90%;
+    }
+
+</style>
+
+<script>
+    document.getElementById('projectCarousel').addEventListener('slid.bs.carousel', function (event) {
+
+        document.querySelectorAll('.carousel-item .animate').forEach(el => {
+            el.classList.remove('fade-up', 'fade-right', 'fade-in');
         });
-    </script>
-</body>
-</html>
+
+        const activeSlide = event.relatedTarget;
+        activeSlide.querySelectorAll('.animate').forEach((el) => {
+            if (el.tagName === 'H3') {
+                el.classList.add('fade-up');
+            } else if (el.tagName === 'P' && el.querySelector('strong')) {
+                el.classList.add('fade-right');
+            } else if (el.tagName === 'P') {
+                el.classList.add('fade-up');
+            } else if (el.tagName === 'VIDEO') {
+                el.classList.add('fade-in');
+            }
+        });
+    });
+</script>

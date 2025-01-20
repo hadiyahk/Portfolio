@@ -1,293 +1,258 @@
-﻿<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Projects</title>
-    <!-- AOS Animation CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <style>
+﻿
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
 
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            height: auto;
+<style>
+
+    .hero-section {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 100vh;
+    }
+
+    .hero-content {
+        flex: 1;
+        text-align: left;
+        z-index: 2;
+        margin-bottom: 130px;
+    }
+
+        .hero-content h1 {
+            font-size: 3em;
             margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        header {
-            background-color: #A88ED7;
-            color: #fff;
-            text-align: center;
-            padding: 20px 0;
-            display: block;
-        }
-
-            header h1 {
-                font-size: 3em;
-                margin: 0;
-            }
-
-            header a {
-                color: #fff;
-                text-decoration: none;
-                font-size: 1.2em;
-                margin-top: 10px;
-                display: inline-block;
-            }
-
-        section {
-            padding: 40px;
-            margin: 20px auto;
-            max-width: 1100px;
-        }
-
-        h2 {
-            color: #4A90E2;
-            font-size: 2em;
-            margin-bottom: 10px;
-        }
-
-        p {
-            font-size: 1.1em;
-            margin-bottom: 20px;
-        }
-
-        ul {
-            list-style: none;
-            padding-left: 0;
-        }
-
-        /* Scoped styles for project list items only */
-        .project-list ul li {
-            background: #e2e8f0;
-            margin-bottom: 10px;
-            padding: 12px;
-            border-radius: 8px;
-            font-size: 1.1em;
-        }
-
-            /* Style the text inside list items */
-            .project-list ul li strong {
-                color: #8569BA;
-            }
-
-        .highlight {
-            color: #4A90E2;
             font-weight: bold;
         }
 
-       
-    </style>
-</head>
-<body>
-    <header data-aos="fade-down">
+        .hero-content a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2em;
+            display: inline-block;
+            background-color: rgba(0, 0, 0, 0.6);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+            .hero-content a:hover {
+                background-color: rgba(0, 0, 0, 0.4);
+            }
+
+
+
+
+
+    .hero-video {
+        flex: 1;
+        width: 100%;
+        height: 70%;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+
+
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+        margin: 20px 0;
+    }
+
+        .navbar a {
+            text-decoration: none;
+            color: #fff;
+            padding: 10px 20px;
+            margin: 0 15px;
+            font-size: 1.2em;
+            position: relative;
+            font-weight: 400;
+            transition: all 0.3s ease;
+        }
+
+            .navbar a:hover {
+                color: #B2FFFF;
+            }
+
+            .navbar a:before {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                height: 2px;
+                width: 100%;
+                background-color: #B2FFFF;
+                transform: scaleX(0);
+                transition: transform 0.3s ease;
+            }
+
+            .navbar a:hover:before {
+                transform: scaleX(1);
+            }
+
+        .navbar .active {
+            color: #B2FFFF;
+            font-weight: bold;
+        }
+
+            .navbar .active:before {
+                transform: scaleX(1);
+            }
+
+
+    section {
+        padding: 40px;
+        margin: 20px auto;
+        max-width: 1100px;
+    }
+
+    h1 {
+        color: white;
+    }
+
+    h2 {
+        color: white;
+        font-size: 2em;
+        margin-bottom: 10px;
+    }
+
+    p {
+        font-size: 1.1em;
+        margin-bottom: 20px;
+        color: white;
+    }
+
+    ul {
+        list-style: none;
+        padding-left: 0;
+        color: white;
+    }
+
+
+
+
+    .project-section {
+        display: none;
+    }
+
+    .active {
+        display: block;
+    }
+
+
+    ul li strong {
+        position: relative;
+        padding-left: 10px;
+        font-weight: bold;
+    }
+
+        ul li strong::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 4px;
+            background-color: #FFD700;
+        }
+
+</style>
+
+
+
+<div class="hero-section">
+
+    <div class="hero-content" data-aos="fade-down">
         <h1>Portfolio Projects</h1>
-        
-    </header>
+        <p>Check out my featured projects and see the impact of my work.</p>
+        <a href="#projects">Explore Projects</a>
+    </div>
 
 
+    <div class="hero-video">
+        <video autoplay loop muted class="hero-video">
+            <source src="~/proj_demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+</div>
 
-    <section data-aos="fade-in">
+
+<div class="navbar">
+    <a href="javascript:void(0);" onclick="filterProjects('all')" class="active">All</a>
+    <a href="javascript:void(0);" onclick="filterProjects('machine-learning')">Machine Learning</a>
+    <a href="javascript:void(0);" onclick="filterProjects('data-analysis')">Data Analysis</a>
+    <a href="javascript:void(0);" onclick="filterProjects('web-development')">Web Development</a>
+</div>
+
+
+<div id="projects" style="padding-bottom: 100px;">
+
+    <section class="project-section machine-learning" data-aos="fade-up">
         <h1>Temperature Prediction with Machine Learning</h1>
         <h2>Project Overview:</h2>
-        <p>This project, which won 3rd place, explored existing machine learning algorithms to choose the best one for predicting temperature from time-series data for up to 8 hours. The chosen model was integrated into a Python-based application, trained on data collected from IoT devices (data loggers installed in industrial refrigerators). The application was designed to create alerts when predicted temperatures fall outside of the expected bounds set by the client.</p>
-
+        <p>This project, which won 3rd place, explored existing machine learning algorithms to choose the best one for predicting temperature from time-series data.</p>
         <h2>Key Features:</h2>
         <ul class="project-list">
-            <ul>
-            <li><strong>Machine Learning Model Selection:</strong> Explored various algorithms to select the best fit for predicting temperature from time-series data.</li>
-            <li><strong>Temperature Prediction:</strong> Integrated the chosen model into a Python-based application to predict future temperatures for up to 8 hours.</li>
-            <li><strong>Alert System:</strong> Created alerts when predicted temperatures were outside of the expected bounds, ensuring timely notifications for the client.</li>
-            <li><strong>Client Data Integration:</strong> The model was trained on data collected from IoT devices in industrial refrigerators, offering a tailored solution for the client's needs.</li>
-            <li><strong>Docker Deployment:</strong> Used Docker to simulate the client's production infrastructure and test the application's ability to predict and alert in a controlled environment.</li>
-            </ul>
-        </ul>
-
-        <h2>Project Highlights:</h2>
-        <ul class="project-list">
-        <ul>
-            <li>Won 3rd place in a competitive project, demonstrating effective use of machine learning in real-world applications.</li>
-            <li>Successfully integrated machine learning algorithms with IoT data to predict temperature with high accuracy.</li>
-            <li>Ensured the application's reliability and compatibility with the client's production environment using Docker technology.</li>
-            <li>Developed a robust alert system that improved the client's ability to monitor and maintain optimal temperature conditions in their refrigerators.</li>
-        </ul>
+            <li><strong>Machine Learning Model Selection:</strong> Explored various algorithms to select the best fit.</li>
+            <li><strong>Temperature Prediction:</strong> Integrated the model into a Python-based application.</li>
         </ul>
     </section>
 
 
-
-
-
-
-     
-    <section data-aos="fade-up">
-        <h1>Fan Club Web App using ASP.NET and Entity Framework</h1>
-        <h2>Project Overview:</h2>
-        <a href="https://hadiyahlab5.azurewebsites.net/">View the Live Project</a>
-        <p>Created a feature-rich <strong>Fan Club Web App</strong> as a creative assignment, showcasing mastery of foundational techniques from course labs. The project included:</p>
-        <ul>
-            <li>Building functionality for managing fans, sports clubs, and news through interactive views.</li>
-            <li>Implementing user actions like registering/unregistering fans to clubs and managing news content, with real-time database updates demonstrated.</li>
-            <li>Deploying the app on Azure and ensuring robust version control using a private Git repository.</li>
-            <li>Showcasing the application via a recorded demo, highlighting key features and database interactions.</li>
-        
-        </ul>
-        <p>This project demonstrated full-stack development skills, database integration, and cloud deployment expertise.</p>
-        <a href="https://github.com/hadiyahk/Assignment2">View the GitHub Repository</a>
-        <h2>Key Features:</h2>
-        <ul class="project-list">
-        <ul>
-            <li><strong>Fan and Club Management:</strong> Ability to manage fan registrations, club memberships, and club-related news content.</li>
-            <li><strong>Real-Time Database Updates:</strong> Implemented real-time updates when fans register, unregister, or when news content is modified.</li>
-            <li><strong>Interactive User Views:</strong> Developed a user-friendly interface for fans to interact with the application and manage their preferences.</li>
-            <li><strong>Cloud Deployment:</strong> Deployed the app on Microsoft Azure, ensuring scalability and availability.</li>
-            <li><strong>Version Control:</strong> Utilized Git for version control, maintaining code integrity and enabling collaborative development.</li>
-        </ul>
-        </ul>
-
-        <h2>Project Highlights:</h2>
-        <ul class="project-list">
-        <ul>
-            <li>Developed as a complete full-stack web application, demonstrating a strong understanding of both front-end and back-end development.</li>
-            <li>Integrated Entity Framework to handle database operations, ensuring smooth data retrieval and updates.</li>
-            <li>Successfully deployed on Azure, showcasing skills in cloud-based application management.</li>
-            <li>Created a dynamic, user-centered experience with interactive features and responsive design.</li>
-            </ul>
-        </ul>
-
-       
-    </section>
-
-    <section data-aos="fade-up">
-        <h1>Compilers Project: IronClad Programming Language</h1>
-        <h2>Project Overview:</h2>
-        <p>Designed and developed <strong>IronClad</strong>, a custom programming language inspired by Rust, utilizing C and Visual Studio Code. Engineered essential components, including a reader, scanner, and parser, to establish a robust foundation for language processing and compilation.</p>
-        <a href="https://github.com/hadiyahk/IronClad">View the GitHub Repository</a>
-
-        <h2>Key Features:</h2>
-        <ul class="project-list">
-            <ul>
-            <li><strong>Custom Programming Language:</strong> Created IronClad, a language inspired by Rust, with a focus on efficient compilation and processing.</li>
-            <li><strong>Reader and Scanner:</strong> Developed the core components for reading and scanning source code, enabling syntax analysis.</li>
-            <li><strong>Parser Implementation:</strong> Designed and implemented the parser to interpret IronClad code and prepare it for further processing.</li>
-            <li><strong>Error Detection:</strong> Integrated error detection mechanisms to ensure that the code is parsed and compiled correctly, providing feedback for debugging.</li>
-            </ul>
-        </ul>
-
-        <h2>Project Highlights:</h2>
-        <ul class="project-list">
-            <ul>
-            <li>Successfully implemented a custom programming language, IronClad, with a clear focus on efficient parsing and compilation.</li>
-            <li>Built a robust toolchain that includes a reader, scanner, and parser to process language syntax and semantics.</li>
-            <li>Used C and Visual Studio Code to create the compiler, demonstrating strong technical skills in both software design and low-level programming.</li>
-            <li>Implemented key compiler concepts, such as lexical analysis and syntax parsing, forming the foundation for building complex compilers.</li>
-            </ul>
-        </ul>
-    </section>
-
-    <section data-aos="fade-up">
-        <h1>Real-Time Building Entry Control System</h1>
-        <h2>Project Overview:</h2>
-        <p>Developed a <strong>Real-Time Building Entry Control System</strong> to simulate and manage access within a controlled space. This system integrates various components, including card scanners, door controllers, weight sensors, and a guard-operated mechanism, to manage entry and exit through the building. The project demonstrates proficiency in real-time programming using <strong>state machine design</strong> and inter-process communication within a QNX environment.</p>
-        <a href="https://github.com/hadiyahk/-Entry-Control-Systemd">View the GitHub Repository</a>
-
-        <h2>Key Features:</h2>
-        <ul class="project-list">
-            <li><strong>State Machine Design</strong>: Created a robust state machine to handle transitions between entry and exit states based on system inputs.</li>
-            <li>
-                <strong>Program Components</strong>:
-                <ul>
-                    <li><strong>des_controller</strong>: Manages system state and handles real-time transitions based on user inputs.</li>
-                    <li><strong>des_display</strong>: Provides real-time updates of system status, including door states and user actions.</li>
-                    <li><strong>des_inputs</strong>: Simulates user interactions, such as card scans and weight measurements, to trigger corresponding actions.</li>
-                </ul>
-            </li>
-            <ul> <li><strong>Error Handling</strong>: Implemented mechanisms to handle invalid inputs without disrupting the system flow, ensuring the system operates smoothly under various conditions.</li></ul>
-           
-        </ul>
-        <h2>Project Highlights:</h2>
-        <ul class="project-list">
-            <ul>
-                <li>
-                    
-                    <p>This project highlights strong skills in <strong>real-time systems development</strong>, <strong>state management</strong>, and <strong>inter-process communication</strong>. It also provides practical experience with <strong>QNX development</strong> tools and <strong>real-time testing</strong> methodologies.</p>
-                </li>
-            </ul>
-        </ul>
-    </section>
-
-
-    <section data-aos="fade-up">
-        <h1>Snake Game Written in JavaFX</h1>
-        <h2>Project Overview:</h2>
-        <p>Created a <strong>Snake Game</strong> using JavaFX, featuring smooth animations, real-time controls, and customizable settings for gameplay. The project demonstrates proficiency in JavaFX application development, focusing on graphical user interface design and game mechanics.</p>
-        <a href="https://github.com/hadiyahk/JavaFXGame/tree/main">View the GitHub Repository</a>
-
-        <h2>Key Features:</h2>
-        <ul class="project-list">
-            <ul>
-            <li><strong>Game Mechanics:</strong> Developed the core mechanics of the classic Snake game, including snake movement, food generation, and collision detection.</li>
-            <li><strong>Real-Time Controls:</strong> Integrated keyboard controls to allow for smooth navigation of the snake within the game environment.</li>
-            <li><strong>Dynamic Scoring:</strong> Implemented a dynamic scoring system that updates as the player consumes food and the snake grows longer.</li>
-            <li><strong>Graphical Interface:</strong> Used JavaFX to design a user-friendly and visually appealing game interface with real-time animations and game state updates.</li>
-            </ul>
-        </ul>
-
-        <h2>Project Highlights:</h2>
-        <ul class="project-list">
-            <ul>
-            <li>Demonstrated strong skills in JavaFX for building interactive graphical applications.</li>
-            <li>Implemented real-time game logic and integrated smooth animations for an enjoyable gameplay experience.</li>
-            <li>Created a responsive interface with keyboard inputs for controlling the snake, showcasing an understanding of event-driven programming.</li>
-            </ul>
-        </ul>
-    </section>
-
-
-    <section data-aos="fade-up">
+    <section class="project-section data-analysis" data-aos="fade-up">
         <h1>Data Analysis and Visualization Project</h1>
         <h2>Project Overview:</h2>
-        <p>This project focused on processing and analyzing data from industrial devices to gain meaningful insights. By integrating advanced visualization techniques, the project highlights the ability to analyze trends, predict outcomes, and represent data effectively in a user-friendly manner.</p>
-
+        <p>This project focused on processing and analyzing data from industrial devices.</p>
         <h2>Key Features:</h2>
         <ul class="project-list">
-            <ul>
-                <li><strong>Data Cleaning and Preparation:</strong> Handled large datasets, ensured accuracy, and performed preprocessing to remove inconsistencies.</li>
-                <li><strong>Visualization Techniques:</strong> Utilized various plotting tools and libraries to present data insights in visually compelling formats.</li>
-                <li><strong>Predictive Analysis:</strong> Applied machine learning models to forecast future trends and device behaviors based on historical data.</li>
-                <li><strong>Interactive Reports:</strong> Created dashboards and reports for easy interpretation of complex datasets.</li>
-            </ul>
-        </ul>
-
-        <h2>Project Highlights:</h2>
-        <ul class="project-list">
-            <ul>
-                <li>Demonstrated proficiency in data analysis and visualization using Python libraries like Matplotlib and Seaborn.</li>
-                <li>Integrated predictive capabilities to provide actionable insights for industrial processes.</li>
-                <li>Developed a user-centric interface for stakeholders to interact with data and derive conclusions effortlessly.</li>
-                <li>Streamlined data workflows for efficiency and scalability.</li>
-            </ul>
+            <li><strong>Data Cleaning:</strong> Handled large datasets, ensuring accuracy.</li>
+            <li><strong>Visualization Techniques:</strong> Used libraries like Matplotlib for presenting data insights.</li>
         </ul>
     </section>
 
+    <section class="project-section web-development" data-aos="fade-up">
+        <h1>Fan Club Web App using ASP.NET and Entity Framework</h1>
+        <h2>Project Overview:</h2>
+        <p>Created a feature-rich <strong>Fan Club Web App</strong> showcasing full-stack development.</p>
+        <h2>Key Features:</h2>
+        <ul class="project-list">
+            <li><strong>Fan Management:</strong> Ability to manage fan registrations and news content.</li>
+            <li><strong>Real-Time Database:</strong> Real-time updates for user actions.</li>
+        </ul>
+    </section>
+</div>
 
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+    AOS.init();
 
-    <footer data-aos="fade-in">
-        <p>&copy; 2025 Portfolio | All Rights Reserved</p>
-    </footer>
+
+    function filterProjects(category) {
+        const allProjects = document.querySelectorAll('.project-section');
+        const allLinks = document.querySelectorAll('.navbar a');
 
 
-    <!-- AOS Animation JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-    <script>
-        AOS.init(); // Initialize AOS animations
-    </script>
+        allLinks.forEach(link => link.classList.remove('active'));
 
-</body>
-</html>
+
+        const clickedLink = Array.from(allLinks).find(link => link.textContent.toLowerCase() === category.replace('-', ' '));
+        if (clickedLink) clickedLink.classList.add('active');
+
+
+        allProjects.forEach(project => {
+            if (category === 'all' || project.classList.contains(category)) {
+                project.classList.add('active');
+                AOS.refresh();
+            } else {
+                project.classList.remove('active');
+            }
+        });
+    }
+
+
+    filterProjects('all');
+</script>
+
