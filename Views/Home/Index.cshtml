@@ -125,8 +125,8 @@
     </div>
 
 
-    <h2 class="text-center" style="padding-top: 50px; padding-bottom: 50px;">Take a quick look at my skillset!</h2>
-
+    <h2 class="text-center" style="padding-top: 50px; padding-bottom: 50px;">Take a look at my skillset!</h2>
+    
     <div class="row text-center mt-4" style="padding-left: 300px; padding-right: 300px;">
 
 
@@ -136,8 +136,10 @@
                 <div class="carousel-item active">
 
 
-                    <h3>Web Development</h3>
-                    @await Html.PartialAsync("_WebDevelopment")
+                    <h3 class="animate">Web Development</h3>
+                    <div class="animate">
+                        @await Html.PartialAsync("_WebDevelopment")
+                    </div>
 
 
 
@@ -145,8 +147,10 @@
                 <div class="carousel-item ">
 
 
-                    <h3>Programming Languages</h3>
-                    @await Html.PartialAsync("_ProgrammingLanguages");
+                    <h3 class="animate">Programming Languages</h3>
+                    <div class="animate">
+                        @await Html.PartialAsync("_ProgrammingLanguages")
+                    </div>
 
 
 
@@ -154,8 +158,10 @@
                 <div class="carousel-item ">
 
 
-                    <h3>Databases</h3>
-                    @await Html.PartialAsync("_Databases");
+                    <h3 class="animate">Databases</h3>
+                    <div class="animate">
+                        @await Html.PartialAsync("_Databases")
+                    </div>
 
 
 
@@ -163,8 +169,8 @@
                 <div class="carousel-item ">
 
 
-                    <h3>Tools and Frameworks</h3>
-                    @await Html.PartialAsync("_ToolsFrameworks");
+                    <h3 class="animate">Tools and Frameworks</h3>
+                    <div class="animate">@await Html.PartialAsync("_ToolsFrameworks")</div>
 
 
 
@@ -187,7 +193,7 @@
     </div>
 
 
-
+    <div class="text-center" style="padding-bottom: 50px;"><a asp-controller="Skills" asp-action="Index" class="btn btn-custom" style="color: black;">See All Skills</a></div>
 
 </section>
 
@@ -196,10 +202,6 @@
         margin-left: -100%;
         height: 700px;
     }
-
-        #myCarousel .carousel-inner .carousel-item h3 {
-            color: #FF3855;
-        }
 
 
     .skills-carousel-control-prev,
@@ -288,7 +290,8 @@
 </style>
 
 <script>
-    document.getElementById('projectCarousel').addEventListener('slid.bs.carousel', function (event) {
+
+    function handleCarouselAnimation(event) {
 
         document.querySelectorAll('.carousel-item .animate').forEach(el => {
             el.classList.remove('fade-up', 'fade-right', 'fade-in');
@@ -304,7 +307,15 @@
                 el.classList.add('fade-up');
             } else if (el.tagName === 'VIDEO') {
                 el.classList.add('fade-in');
+            } else {
+                el.classList.add('fade-in');
             }
         });
-    });
+    }
+
+
+    document.getElementById('projectCarousel').addEventListener('slid.bs.carousel', handleCarouselAnimation);
+
+    document.getElementById('myCarousel').addEventListener('slid.bs.carousel', handleCarouselAnimation);
+
 </script>

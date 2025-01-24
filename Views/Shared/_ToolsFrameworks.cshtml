@@ -111,7 +111,7 @@
         --items: 4; /*change*/
         --middle: 3; /*change*/
         --position: 1;
-        pointer-events: none;
+        pointer-events: auto;
     }
 
         .tools-carousel div.item {
@@ -192,3 +192,20 @@
 
     /*add*/
 </style>
+
+<script>
+    document.querySelectorAll('.tools-carousel .item').forEach((item, index) => {
+        item.addEventListener('click', () => {
+
+            const radioButton = document.querySelectorAll('input[name="tools"]')[index];
+
+
+            if (radioButton) {
+                radioButton.checked = true;
+
+
+                radioButton.dispatchEvent(new Event('change'));
+            }
+        });
+    });
+</script>
