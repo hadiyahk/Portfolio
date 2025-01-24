@@ -993,10 +993,15 @@ body.loaded .loader {
 .skill-info {
     background-color: pink;
     border-radius: 5px;
-    height: 80px;
-    padding: 10px 100px 10px 10px;
+    height: 90px;
+    width: 200px;
     color: white;
+    padding: 10px;
 }
+
+    .skill-info small {
+        font-size: 0.7em;
+    }
 
 .right i {
     left: -20px;
