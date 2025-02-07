@@ -1,8 +1,9 @@
-﻿<div class="tools-carousel-container">
+﻿﻿<div class="tools-carousel-container">
 
     <input type="radio" name="tools" />
     <input type="radio" name="tools" />
     <input type="radio" name="tools" checked />
+    <input type="radio" name="tools" />
     <input type="radio" name="tools" />
 
 
@@ -17,17 +18,20 @@
             <h3 class="name">Docker</h3>
         </div>
         <div class="item">
-            <i class="fas fa-brain fa-4x"></i>
-            <h3 class="name">Machine Learning</h3>
+            <i class="fab fa-python fa-4x"></i>
+            <h3 class="name">Keras</h3>
         </div>
         <div class="item">
-            <i class="fas fa-code fa-4x"></i>
-            <h3 class="name">C#</h3>
+            <i class="fab fa-angular fa-4x"></i>
+            <h3 class="name">Angular</h3>
+        </div>
+        <div class="item">
+            <i class="fab fa-git fa-4x"></i>
+            <h3 class="name">Git</h3>
         </div>
 
-
-
     </div>
+
 
 </div>
 
@@ -79,7 +83,7 @@
         margin: 0;
         display: grid;
         grid-template-rows: 500px 100px;
-        grid-template-columns: 1fr 30px 30px 30px 30px 1fr; /*change*/
+        grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr; /*change*/
         align-items: center;
         justify-items: center;
         font-family: 'Poppins', sans-serif;
@@ -99,7 +103,7 @@
 
     .tools-carousel {
         grid-row: 1 / 2;
-        grid-column: 1 / 7; /*change*/
+        grid-column: 1 / 8; /*change*/
         width: 100vw;
         height: 300px;
         display: flex;
@@ -108,7 +112,7 @@
         overflow: hidden;
         transform-style: preserve-3d;
         perspective: 600px;
-        --items: 4; /*change*/
+        --items: 5; /*change*/
         --middle: 3; /*change*/
         --position: 1;
         pointer-events: auto;
@@ -145,6 +149,10 @@
 
             .tools-carousel div.item:nth-of-type(4) {
                 --offset: 4;
+            }
+
+            .tools-carousel div.item:nth-of-type(5) {
+                --offset: 5;
             }
 
 
@@ -188,24 +196,33 @@
             --position: 4;
         }
 
+    .tools-carousel-container input:nth-of-type(5) {
+        grid-column: 6 / 7;
+        grid-row: 2 / 3;
+    }
+
+        .tools-carousel-container input:nth-of-type(5):checked ~ .tools-carousel {
+            --position: 5;
+        }
+
 
 
     /*add*/
 </style>
 
-    <script>
+<script>
     document.querySelectorAll('.tools-carousel .item').forEach((item, index) => {
         item.addEventListener('click', () => {
-           
+
             const radioButton = document.querySelectorAll('input[name="tools"]')[index];
 
-            
+
             if (radioButton) {
                 radioButton.checked = true;
 
-                
+
                 radioButton.dispatchEvent(new Event('change'));
             }
         });
     });
-    </script>
+</script>

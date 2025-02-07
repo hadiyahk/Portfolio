@@ -1,5 +1,4 @@
-﻿﻿
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -29,7 +28,7 @@
         </div>
     </div>
 
-    <style>
+  @*   <style>
 
 
 
@@ -45,7 +44,7 @@
                 transform: scale(1.1);
             }
 
-    </style>
+    </style> *@
 
     <div class="container d-flex justify-content-between align-items-center">
 
@@ -60,6 +59,7 @@
         </button>
     </div>
     <div class="nav-overlay" id="navMenu">
+        <div class="nav-content">
         <div class="menu">
             <a href="@Url.Action("Index", "Home")" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "Home") ? "active" : "")">Home</a>
             <a asp-controller="Projects" asp-action="Index" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "Projects") ? "active" : "")">Projects</a>
@@ -72,6 +72,7 @@
             <p style="padding: 30px;">Here's my email: HadiyahKhan03@gmail.com</p>
             <a href="mailto:HadiyahKhan03@gmail.com" class="btn-custom">Email Me</a>
         </div>
+    </div>
     </div>
     <style>
 
@@ -117,6 +118,7 @@
                 transition: transform 0.3s ease;
             }
 
+
             .menu a:hover::after {
                 transform: scaleX(1);
                 transform-origin: left;
@@ -156,21 +158,29 @@
         .footer {
             background-color: black;
             z-index: 99;
-            padding: 40px 20px;
+            padding: 40px 5%;
             color: white;
             text-align: left;
+            width: 100%;
+            position: relative;
+            bottom: 0;
         }
 
         .footer-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap; /* Allows items to stack when needed */
+            width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding-left: 100px;
-            padding-bottom: 50px;
         }
 
+
+        /* Ensure the body has no margin */
+        body {
+            margin: 0;
+        }
 
         .footer-left h2 {
             font-size: 1.8em;
@@ -282,6 +292,30 @@
             setTimeout(function () {
                 document.body.classList.add('loaded');
             }, 500);
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function () {
+            let lastScrollTop = 0;
+            const logo = document.querySelector(".logo");
+
+            window.addEventListener("scroll", function () {
+                let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+                if (scrollTop > lastScrollTop) {
+                    // Scrolling down - hide the logo on mobile/tablet
+                    if (window.innerWidth <= 1024) {
+                        logo.classList.add("hidden");
+                    }
+                } else {
+                    // Scrolling up - show the logo
+                    if (window.innerWidth <= 1024) {
+                        logo.classList.remove("hidden");
+                    }
+                }
+
+                lastScrollTop = scrollTop;
+            });
         });
 
 

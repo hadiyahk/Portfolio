@@ -1,8 +1,9 @@
-﻿<div class="web-carousel-container">
+﻿﻿<div class="web-carousel-container">
 
-    <input type="radio" name="web"  />
-    <input type="radio" name="web"/>
+    <input type="radio" name="web" />
+    <input type="radio" name="web" />
     <input type="radio" name="web" checked />
+    <input type="radio" name="web" />
     <input type="radio" name="web" />
 
 
@@ -25,11 +26,13 @@
             <i class="fab fa-node-js fa-4x"></i>
             <h3 class="name">Node.js</h3>
         </div>
-
-
-
+        <div class="item">
+            <i class="fab fa-js fa-4x"></i>
+            <h3 class="name">JavaScript</h3>
+        </div>
 
     </div>
+
 
 </div>
 
@@ -81,7 +84,7 @@
         margin: 0;
         display: grid;
         grid-template-rows: 500px 100px;
-        grid-template-columns: 1fr 30px 30px 30px 30px 1fr; /*change*/
+        grid-template-columns: 1fr 30px 30px 30px 30px 30px 1fr; /*change*/
         align-items: center;
         justify-items: center;
         font-family: 'Poppins', sans-serif;
@@ -101,7 +104,7 @@
 
     .web-carousel {
         grid-row: 1 / 2;
-        grid-column: 1 / 7; /*change*/
+        grid-column: 1 / 8; /*change*/
         width: 100vw;
         height: 300px;
         display: flex;
@@ -110,7 +113,7 @@
         overflow: hidden;
         transform-style: preserve-3d;
         perspective: 600px;
-        --items: 4; /*change*/
+        --items: 5; /*change*/
         --middle: 3; /*change*/
         --position: 1;
         pointer-events: auto;
@@ -133,6 +136,7 @@
             z-index: calc((var(--position) - var(--abs)));
         }
 
+
             .web-carousel div.item:nth-of-type(1) {
                 --offset: 1;
             }
@@ -147,6 +151,10 @@
 
             .web-carousel div.item:nth-of-type(4) {
                 --offset: 4;
+            }
+
+            .web-carousel div.item:nth-of-type(5) {
+                --offset: 5;
             }
 
 
@@ -190,6 +198,15 @@
             --position: 4;
         }
 
+    .web-carousel-container input:nth-of-type(5) {
+        grid-column: 6 / 7;
+        grid-row: 2 / 3;
+    }
+
+        .web-carousel-container input:nth-of-type(5):checked ~ .web-carousel {
+            --position: 5;
+        }
+
 
 
     /*add*/
@@ -199,14 +216,14 @@
 <script>
     document.querySelectorAll('.web-carousel .item').forEach((item, index) => {
         item.addEventListener('click', () => {
-           
+
             const radioButton = document.querySelectorAll('input[name="web"]')[index];
 
-            
+
             if (radioButton) {
                 radioButton.checked = true;
 
-               
+
                 radioButton.dispatchEvent(new Event('change'));
             }
         });

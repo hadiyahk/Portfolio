@@ -1,53 +1,99 @@
-﻿<link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+﻿﻿<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 
 <style>
+
+    body {
+        font-family: 'Roboto', sans-serif;
+    }
 
     .container {
         display: flex;
         align-items: center;
-        gap: 20px;
+        gap: 30px;
+        padding: 40px 0;
+        flex-wrap: wrap;
     }
 
-    .profile-img {
-        height: 350px;
-        width: 350px;
+    .image-container {
+        position: relative;
+        width: 20vw;
+        max-width: 300px;
+        height: auto;
+        aspect-ratio: 1;
+        margin: 0 auto;
+    }
+
+    .circular-image {
+        position: absolute;
+        width: 100%;
+        height: 100%;
         border-radius: 50%;
         object-fit: cover;
-        display: block;
+        object-position: center top;
+    }
+
+    .front-image {
+        z-index: 2;
+        border: 2px solid #FFC60B;
+        object-position: center 20%;
+    }
+
+    .back-image {
+        z-index: 1;
+        transform: scale(1.75);
     }
 
     .text-content {
-        font-family: Arial, sans-serif;
-        line-height: 1.6;
         max-width: 800px;
-        margin: auto;
         padding: 20px;
+        flex: 1;
     }
+
 
     h1 {
         text-align: center;
-        font-size: 2.5em;
+        font-size: 2.5vw;
         color: #C8E1E2;
-        font-family: 'Times New Roman', Times, serif;
+        font-family: 'Roboto Slab', serif;
+        margin-bottom: 20px;
     }
 
     p {
-        font-size: 1.1em;
-        color: white;
+        font-size: 1vw;
+        color: #f0f4f8;
+        margin-bottom: 20px;
+        line-height: 1.7;
     }
 
+
+
+
     strong {
-        font-weight: bold;
+        font-weight: 600;
+        color: #FFC60B;
     }
+
+    .section-title {
+        font-size: 2vw;
+        font-family: 'Roboto Slab', serif;
+        text-align: center;
+        color: #C8E1E2;
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+
 </style>
 
 <div style="padding-bottom: 100px;">
 
     <div class="container" data-aos="fade-right">
-        <div>
-            <img src="my_self.JPG" alt="Hadiyah Khan" class="profile-img" />
+        <div class="image-container">
+            <img src="hframe.png" alt="Image 1" class="circular-image back-image" style="border-radius: 0;">
+            <img src="myself.JPG" alt="Image 2" class="circular-image front-image">
         </div>
-        <div class="text-content">
+
+        <div class="text-content" style="padding-left: 100px;">
             <h1 data-aos="fade-up">Who Am I?</h1>
             <p data-aos="fade-left">
                 Hi! my name is Hadiyah Khan and I am a passionate and results-driven software developer with a strong foundation in <strong>web development</strong>, <strong>data analysis</strong>, and <strong>software engineering</strong>.
@@ -55,13 +101,14 @@
             <p>
                 Over the years, I’ve honed my skills by tackling complex problems, leveraging cutting-edge technologies, and delivering impactful solutions. My journey in technology has been fueled by an innate curiosity, a desire to understand how things work, and an unwavering commitment to continuous learning.
             </p>
-            <p data-aos="fade-left">
-                What excites me most is the process of transforming ideas into functional, efficient, and user-friendly systems. For me, every line of code is not just a task—it’s an opportunity to innovate, optimize, and contribute to a larger goal. Whether I'm building a responsive website, analyzing data trends, or developing a scalable application, I strive to create solutions that are both powerful and meaningful. I thrive on the challenge of solving intricate problems and discovering new ways to push the boundaries of what’s possible.
-            </p>
+            
         </div>
+        <p data-aos="fade-left">
+            What excites me most is the process of transforming ideas into functional, efficient, and user-friendly systems. For me, every line of code is not just a task—it’s an opportunity to innovate, optimize, and contribute to a larger goal. Whether I'm building a responsive website, analyzing data trends, or developing a scalable application, I strive to create solutions that are both powerful and meaningful. I thrive on the challenge of solving intricate problems and discovering new ways to push the boundaries of what’s possible.
+        </p>
     </div>
 
-    <h1 data-aos="fade-down">My Work Ethic</h1>
+    <h1 class="section-title" data-aos="fade-down">My Work Ethic</h1>
     <p data-aos="fade-right">
         I bring a strong work ethic, determination, and adaptability to everything I do. I thrive in fast-paced environments where change is constant, and expectations evolve rapidly. This dynamic nature fuels my growth, as I’m constantly learning, refining my skills, and adapting to new technologies and methodologies. I embrace challenges as opportunities to expand my knowledge and improve my craft.
     </p>
@@ -73,7 +120,6 @@
     </p>
 
 </div>
-
 
 <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
 <script>
