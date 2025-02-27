@@ -1,8 +1,8 @@
-﻿@{
+﻿﻿@{
     ViewData["Title"] = "Home Page";
 }
 
-<div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" style="padding-bottom: 100px;">
+<div id="projectCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-touch="true" style="padding-bottom: 100px;">
     <div class="carousel-inner">
 
         <div class="carousel-item active">
@@ -46,7 +46,7 @@
                 </div>
                 <div class="col-md-6">
                     <video class="animate" autoplay loop muted>
-                        <source src="gameplay.mp4" type="video/mp4">
+                        <source src="snakegame.mp4" type="video/mp4">
                         Your browser does not support the video tag.
                     </video>
                 </div>
@@ -82,159 +82,121 @@
     <a asp-controller="AboutMe" asp-action="Index" class="btn-custom">Learn More About Me</a>
 </section>
 
+<section class="full-width bg-white py-5 ">
+    <div class="home-skills-content">
 
-<section class="full-width" style="background-color: white; ">
-    <h2 class="text-center">Here's What I Can Help You With</h2>
-    <div class="row text-center mt-4" style="padding-left: 300px; padding-right: 300px;">
-        <div class="col-md-4">
-            <div class="skill-card">
-                <h4>Web Development</h4>
-                <p>I build responsive and scalable web applications using modern frameworks and best practices.</p>
+        <h2 class="text-center">Here's What I Can Help You With</h2>
+
+        <div class="row text-center mt-4 mx-auto px-3">
+            <div class="col-12 col-sm-6 col-md-4 mb-4 home-skill-cell">
+                <div class="skill-card">
+                    <h4>Web Development</h4>
+                    <p>I build responsive and scalable web applications using modern frameworks and best practices.</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4  home-skill-cell">
+                <div class="skill-card">
+                    <h4>Agile Methodologies</h4>
+                    <p>Experienced in Agile workflows, sprint planning, and delivering projects efficiently in a team environment.</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4  home-skill-cell">
+                <div class="skill-card">
+                    <h4>Machine Learning</h4>
+                    <p>I can design and train machine learning models to solve real-world problems using TensorFlow and Keras.</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4  home-skill-cell">
+                <div class="skill-card">
+                    <h4>Database Management</h4>
+                    <p>Skilled in designing, optimizing, and managing relational databases with tools like MariaDB and SQL Server.</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4  home-skill-cell">
+                <div class="skill-card">
+                    <h4>Cloud Computing</h4>
+                    <p>Proficient in deploying, managing, and scaling applications on cloud platforms like AWS and Azure.</p>
+                </div>
+            </div>
+            <div class="col-12 col-sm-6 col-md-4 mb-4  home-skill-cell">
+                <div class="skill-card">
+                    <h4>UI/UX Design</h4>
+                    <p>Expert in creating intuitive and visually appealing interfaces that enhance user experience.</p>
+                </div>
             </div>
         </div>
-        <div class="col-md-4">
-            <div class="skill-card">
-                <h4>Agile Methodologies</h4>
-                <p>Experienced in Agile workflows, sprint planning, and delivering projects efficiently in a team environment.</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="skill-card">
-                <h4>Machine Learning</h4>
-                <p>I can design and train machine learning models to solve real-world problems using TensorFlow and Keras.</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="skill-card">
-                <h4>Database Management</h4>
-                <p>Skilled in designing, optimizing, and managing relational databases with tools like MariaDB and SQL Server.</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="skill-card">
-                <h4>Cloud Computing</h4>
-                <p>Proficient in deploying, managing, and scaling applications on cloud platforms like AWS and Azure.</p>
-            </div>
-        </div>
-        <div class="col-md-4">
-            <div class="skill-card">
-                <h4>UI/UX Design</h4>
-                <p>Expert in creating intuitive and visually appealing interfaces that enhance user experience.</p>
-            </div>
-        </div>
+
     </div>
 
+    <h2 class="text-center pt-5 pb-3">Take a look at my skillset!</h2>
 
-    <h2 class="text-center" style="padding-top: 50px; padding-bottom: 50px;">Take a look at my skillset!</h2>
-
-    <div class="row text-center mt-4" style="padding-left: 300px; padding-right: 300px;">
-
-
+    <div class="row text-center mt-4">
         <div id="myCarousel" class="carousel slide" data-bs-ride="false">
             <div class="carousel-inner">
 
                 <div class="carousel-item active">
-
 
                     <h3 class="animate">Web Development</h3>
                     <div class="animate">
                         @await Html.PartialAsync("_WebDevelopment")
                     </div>
 
-
-
                 </div>
-                <div class="carousel-item ">
 
+                <div class="carousel-item">
 
                     <h3 class="animate">Programming Languages</h3>
                     <div class="animate">
                         @await Html.PartialAsync("_ProgrammingLanguages")
                     </div>
 
-
-
                 </div>
-                <div class="carousel-item ">
 
+                <div class="carousel-item">
 
                     <h3 class="animate">Databases</h3>
                     <div class="animate">
                         @await Html.PartialAsync("_Databases")
                     </div>
 
-
-
                 </div>
-                <div class="carousel-item ">
 
+                <div class="carousel-item">
 
                     <h3 class="animate">Tools and Frameworks</h3>
                     <div class="animate">@await Html.PartialAsync("_ToolsFrameworks")</div>
 
-
-
                 </div>
-
 
             </div>
 
-
             <button class="skills-carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
-                <i class="fas fa-chevron-left" style="color: black; font-size: 50px;"></i>
+                <i class="fas fa-chevron-left" style=" color: black; font-size: 50px;"></i>
                 <span class="visually-hidden">Previous</span>
             </button>
             <button class="skills-carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
                 <i class="fas fa-chevron-right" style="color: black; font-size: 50px;"></i>
                 <span class="visually-hidden">Next</span>
             </button>
-        </div>
 
+        </div>
     </div>
+
+
 
 
     <div class="text-center" style="padding-bottom: 50px;"><a asp-controller="Skills" asp-action="Index" class="btn btn-custom" style="mix-blend-mode: difference;">See All Skills</a></div>
 
+
+
 </section>
+
 
 <style>
     #myCarousel .carousel-inner .carousel-item {
         margin-left: -100%;
         height: 700px;
     }
-
-
-    .skills-carousel-control-prev,
-    .skills-carousel-control-next {
-        position: absolute;
-        top: 35%;
-        transform: translateY(-50%);
-        background-color: white;
-        border-radius: 50%;
-        width: 80px;
-        height: 80px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        cursor: pointer;
-        z-index: 10;
-        border: 1px solid white;
-        transition: transform 0.3s ease;
-    }
-
-    .skills-carousel-control-prev {
-        left: -100px;
-    }
-
-    .skills-carousel-control-next {
-        right: -100px;
-    }
-
-
-        .skills-carousel-control-prev:hover,
-        .skills-carousel-control-next:hover {
-            transform: translateY(-50%) scale(1.1);
-        }
 
 </style>
 

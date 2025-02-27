@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -28,21 +29,21 @@
         </div>
     </div>
 
-  @*   <style>
+    @*   <style>
 
 
 
-        .logo {
-            mix-blend-mode: difference;
-            position: fixed;
-            transition: transform 0.3s ease;
-            top: 40px;
-            z-index: 999;
-        }
+    .logo {
+    mix-blend-mode: difference;
+    position: fixed;
+    transition: transform 0.3s ease;
+    top: 40px;
+    z-index: 999;
+    }
 
-            .logo:hover {
-                transform: scale(1.1);
-            }
+    .logo:hover {
+    transform: scale(1.1);
+    }
 
     </style> *@
 
@@ -60,19 +61,19 @@
     </div>
     <div class="nav-overlay" id="navMenu">
         <div class="nav-content">
-        <div class="menu">
-            <a href="@Url.Action("Index", "Home")" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "Home") ? "active" : "")">Home</a>
-            <a asp-controller="Projects" asp-action="Index" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "Projects") ? "active" : "")">Projects</a>
-            <a asp-controller="Skills" asp-action="Index" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "Skills") ? "active" : "")">Skills</a>
-            <a asp-controller="AboutMe" asp-action="Index" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "AboutMe") ? "active" : "")">About Me</a>
-        </div>
+            <div class="menu">
+                <a href="@Url.Action("Index", "Home")" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "Home") ? "active" : "")">Home</a>
+                <a asp-controller="Projects" asp-action="Index" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "Projects") ? "active" : "")">Projects</a>
+                <a asp-controller="Skills" asp-action="Index" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "Skills") ? "active" : "")">Skills</a>
+                <a asp-controller="AboutMe" asp-action="Index" class="@((ViewContext.RouteData.Values["controller"]?.ToString() == "AboutMe") ? "active" : "")">About Me</a>
+            </div>
 
-        <div class="contact-content">
-            <h2>Let's Get In Contact</h2>
-            <p style="padding: 30px;">Here's my email: HadiyahKhan03@gmail.com</p>
-            <a href="mailto:HadiyahKhan03@gmail.com" class="btn-custom">Email Me</a>
+            <div class="contact-content">
+                <h2>Let's Get In Contact</h2>
+                <p style="padding: 30px;">Here's my email: HadiyahKhan03@gmail.com</p>
+                <a href="mailto:HadiyahKhan03@gmail.com" class="btn-custom">Email Me</a>
+            </div>
         </div>
-    </div>
     </div>
     <style>
 
