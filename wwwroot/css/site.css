@@ -595,7 +595,11 @@ main {
     animation: cursorAnim3 .5s forwards;
     border: 1px solid red;
 }
-
+@media (max-width: 1024px) {
+    .cursor {
+        display: none !important;
+    }
+}
 
 /*contaier*/
 .container {
